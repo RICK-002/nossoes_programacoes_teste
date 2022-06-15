@@ -4,7 +4,22 @@
     </head>
     <body>
         <form action="" method="POST">
-            <center>    
+            <center>  
+                <label>Nome: </label><br>
+                <input Type="text" name="nome" required><br>
+
+                <label>Sobrenome: </label><br>
+                <input Type="text" name="sobrenome" required><br>
+
+                <label>Idade: </label><br>
+                <input Type="number" name="idade" required><br>
+
+                <label>Data: </label><br>
+                <input Type="date" name="data" required><br>
+
+                <label>Peso: </label><br>
+                <input Type="number" name="peso" required><br>
+
                 <label>Cidade: </label><br>
                 <input type="text" name="cidade" required><br>
 
