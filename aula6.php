@@ -4,22 +4,7 @@
     </head>
     <body>
         <form action="" method="POST">
-            <center>  
-                <label>Nome: </label><br>
-                <input Type="text" name="nome" required><br>
-
-                <label>Sobrenome: </label><br>
-                <input Type="text" name="sobrenome" required><br>
-
-                <label>Idade: </label><br>
-                <input Type="number" name="idade" required><br>
-
-                <label>Data: </label><br>
-                <input Type="date" name="data" required><br>
-
-                <label>Peso: </label><br>
-                <input Type="number" name="peso" required><br>
-
+            <center>    
                 <label>Cidade: </label><br>
                 <input type="text" name="cidade" required><br>
 
@@ -32,8 +17,7 @@
         <?php
         class pessoa_obj{};
 
- //git status
- 
+
         $pessoa = new pessoa_obj();
         $pessoa->name = "Nick";
         $pessoa->sobrenome = "Doe";
@@ -87,6 +71,6 @@
 
         </table>                        <!-- fechando a tabela -->
         </center>
-       
+        
     </body>
 </html>
