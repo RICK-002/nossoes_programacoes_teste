@@ -47,7 +47,18 @@
             //exibir os dados da nossa tabela
             return $resultado_comando;
           }
+          function deletar($id){
+            $conexao = conexao();
+            $comando = "DELETE FROM FUNCIONARIOS WHERE ID = $id";
+            if(mysqli_query($conexao, $comando)){
+              echo"Registro do funcionario apagado com Sucesso!";
+            }else{
+              echo"Deu erro, funcionario não foi apagado.";
+            }
+          }
+
           $funcionarios = selectFuncionarios();
+        
         ?>
         <table class="table table-dark table-hover">
             <thead>
@@ -62,6 +73,9 @@
             </thead>
             <tbody>
                 <?php
+                if(isset($_GET['id'])){
+                    deletar($_GET['id']);
+                }
                 while($indice = mysqli_fetch_array($funcionarios)){
                    // print_r($indice);
                     echo "<tr>";
@@ -70,8 +84,14 @@
                     echo "<td>".$indice['cargo']."</td>";
                     echo "<td>".$indice['salario']."</td>";
                     echo "<td>".$indice['descricao']."</td>";
-                    echo "<td>"."<button class='btn btn-info'>Editar</button>";
-                    echo "<button class='btn btn-danger'>Remover</button><td>";
+                    echo "<td>";
+                      echo "<form action='editarFuncionarios.php?id=$indice[id] method='POST'>";
+                          echo "<button class='btn btn-info'>Editar</button>";
+                      echo "</form>";
+                      echo "<form action='funcionarios.php?id=$indice[id]' method='POST'>";
+                          echo "<button type='submit' class='btn btn-danger'>Remover</button>";
+                      echo "</form>";
+                    echo "</td>";
                     echo "</tr>";
                 }
                 ?>
